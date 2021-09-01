@@ -36,7 +36,7 @@ A CLI tool to help batch renaming of files.
 
     Or grab the latest [release](https://github.com/POWRFULCOW89/batch-rename/releases).
 
-5. (Optional) [Add compiled .exe to PATH](https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/).
+5. (Optional) [Add the binary file to PATH](https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/).
 
 ## Usage
 
@@ -49,7 +49,7 @@ A CLI tool to help batch renaming of files.
     Outputs:
 
     ```txt
-    usage: batch-renamepy.exe [-h] [-n] [path] substring [new_string]
+    usage: batch-rename.exe [-h] [-n] [path] substring [new_string]
     
     Batch rename files, stripping a given substring
     
