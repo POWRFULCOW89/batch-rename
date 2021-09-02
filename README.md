@@ -96,4 +96,3 @@ A CLI tool to help batch renaming of files.
 ## TO-DO
 
 - [ ] RegEx support
-- [ ] Tests
