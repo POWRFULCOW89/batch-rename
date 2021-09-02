@@ -27,8 +27,14 @@ A CLI tool to help batch renaming of files.
     ```sh
     (env) pip install -r requirements.txt
     ```
+    
+4. Run the tests:
 
-4. Build from source:
+    ```sh
+    (env) python test.py
+    ```
+
+5. Build from source:
 
     ```sh
     (env) pyinstaller --onefile main.py
@@ -36,7 +42,7 @@ A CLI tool to help batch renaming of files.
 
     Or grab the latest [release](https://github.com/POWRFULCOW89/batch-rename/releases).
 
-5. (Optional) [Add the binary file to PATH](https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/).
+6. (Optional) [Add the binary file to PATH](https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/).
 
 ## Usage
 
