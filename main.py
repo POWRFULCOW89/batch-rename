@@ -46,20 +46,20 @@ def renameFiles(path, files, substring, new_string, numbers):
     """
     count = 0 # Final count to return of successful renames
 
-    for file in files:
+    if files: 
+        for file in files:
+            name, ext = splitext(file) # Destructuring the name and extension of each file
+            newName = name
 
-        name, ext = splitext(file) # Destructuring the name and extension of each file
-        newName = name
+            if numbers: 
+                newName = substring + str(count + 1) # Appending a number if numbers is true
 
-        if numbers: 
-            newName = substring + str(count + 1) # Appending a number if numbers is true
-
-        elif name.find(substring) != -1:
-            newName = name.replace(substring, new_string) # Renaming
-        
-        if numbers or name.find(substring) != -1: # if the numbers flag is present or a file can be renamed, then
-            count += 1
-            rename("{0}/{1}".format(path, file), "{0}/{1}{2}".format(path, newName, ext))
+            elif name.find(substring) != -1:
+                newName = name.replace(substring, new_string) # Renaming
+            
+            if numbers or name.find(substring) != -1: # if the numbers flag is present or a file can be renamed, then
+                count += 1
+                rename("{0}/{1}".format(path, file), "{0}/{1}{2}".format(path, newName, ext))
         
 
     if count > 0: 

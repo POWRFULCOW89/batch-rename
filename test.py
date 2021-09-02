@@ -68,7 +68,6 @@ class TestBatchRename(unittest.TestCase):
         files = scanDir("./tests")
         count = renameFiles("./tests", files, "File_case_number_", "", True )
         files = scanDir("./tests")
-        files.sort()
         self.assertEqual(count, 5)
         self.assertListEqual(files, 
         [   'File_case_number_1.txt',
@@ -76,8 +75,38 @@ class TestBatchRename(unittest.TestCase):
             'File_case_number_3.txt',
             'File_case_number_4.txt',
             'File_case_number_5.txt'])
+
+    def test_i_failed_rename(self):
+        files = scanDir("./tests")
+        count = renameFiles("./tests", files, "Archive", "", False )
+        files = scanDir("./tests")
+        self.assertEqual(count, None)
+        self.assertListEqual(files, 
+        [   'File_case_number_1.txt',
+            'File_case_number_2.txt',
+            'File_case_number_3.txt',
+            'File_case_number_4.txt',
+            'File_case_number_5.txt'])
+
+    def test_j_failed_rename_2(self):
+        count = renameFiles("./test_fake", scanDir("./test_fake"), "throw", "away", True)
+        files = scanDir("./test_fake")
+        self.assertEqual(count, None)
+        self.assertEqual(files, None)
+
+    def test_k_rename_numerically_with_new_string(self):
+        files = scanDir("./tests")
+        count = renameFiles("./tests", files, "File_", "This doesnt matter", True )
+        files = scanDir("./tests")
+        self.assertEqual(count, 5)
+        self.assertListEqual(files, 
+        [   'File_1.txt',
+            'File_2.txt',
+            'File_3.txt',
+            'File_4.txt',
+            'File_5.txt'])
         
-    def test_i_deleteFiles(self):
+    def test_z_deleteFiles(self):
         rmtree("tests")
         # help(scanDir)
         # help(renameFiles)
